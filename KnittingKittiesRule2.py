@@ -23,14 +23,14 @@ bg_image = pygame.image.load('sky_with_clouds.jpg').convert_alpha()
 class Player():
     def __init__(self, x, y):
         self.image = pygame.transform.scale(bunny_image, (70, 70))
-	    self.width = 45
-	    self.height = 55
-	    self.rect = pygame.Rect(0, 0, self.width, self.height)
-	    self.rect.center = (x, y)
+        self.width = 45
+	self.height = 55
+	self.rect = pygame.Rect(0, 0, self.width, self.height)
+	self.rect.center = (x, y)
 
     def draw(self):
 	screen.blit(self.image, (self.rect.x - 12, self.rect.y - 5))
-		pygame.draw.rect(screen, WHITE, self.rect, 2)
+	pygame.draw.rect(screen, WHITE, self.rect, 2)
 		
     def move(self):
         dx = 0
@@ -59,16 +59,13 @@ while run:
     #draw sprites
     bunny.draw()
 
-
     #event handler
     for event in pygame.event.get():
 	if event.type == pygame.QUIT:
 	    run = False
 
-
     #update display window
     pygame.display.update()
-
 
 
 pygame.quit()
